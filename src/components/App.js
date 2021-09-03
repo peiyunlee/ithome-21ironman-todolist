@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import * as actions from "../actions/todos";
+
 import TaskList from "./TaskList";
 import addIcon from "../assets/icon/add.png";
 
@@ -33,7 +36,7 @@ const Input = styled.input`
     cursor: pointer;
   }
 
-  &::placeholder { 
+  &::placeholder {
     color: #333;
   }
 `;
@@ -46,11 +49,22 @@ const AddTaskContainer = styled.div`
   margin: 25px auto 40px;
 `;
 
+const AddBtnImg = styled.img`
+  cursor: pointer;
+`;
+
 function App() {
+  const dispatch = useDispatch();
+
   const [newTask, setnewTask] = useState("");
 
   const handleChange = (event) => {
     setnewTask(event.target.value);
+  };
+
+  const handleClick = (event) => {
+    dispatch(actions.addTask(newTask));
+    setnewTask("");
   };
 
   return (
@@ -64,7 +78,7 @@ function App() {
           value={newTask}
           onChange={handleChange}
         />
-        <img src={addIcon} alt="" />
+        <AddBtnImg src={addIcon} alt="" onClick={() => handleClick()} />
       </AddTaskContainer>
       <TaskList></TaskList>
     </Wrapper>

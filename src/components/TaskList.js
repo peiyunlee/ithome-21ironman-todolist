@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+
 import Filter from "./Filter";
 import TaskItem from "./TaskItem";
 
@@ -19,14 +21,29 @@ const TaskItemContainer = styled.div`
 `;
 
 function TaskList() {
+  const tasks = useSelector((store) => store.todosReducer);
+  const filter = useSelector((store) => store.filterReducer);
+
+  const renderItems = () => {
+    let list = [];
+    tasks.forEach((item, index) => {
+      if (
+        (filter === "SHOW_ALL") ||
+        (filter === "SHOW_TODO" && !item.isCompleted) ||
+        (filter === "SHOW_DONE" && item.isCompleted)
+      ) {
+        list.push(
+          <TaskItem key={item.taskName} task={{ ...item, idx: index }} />
+        );
+      }
+    });
+    return list;
+  };
+
   return (
     <Wrapper>
       <Filter />
-      <TaskItemContainer>
-        <TaskItem />
-        <TaskItem />
-        <TaskItem />
-      </TaskItemContainer>
+      <TaskItemContainer>{renderItems()}</TaskItemContainer>
     </Wrapper>
   );
 }
