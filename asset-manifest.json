@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.a617e044.chunk.css",
-    "main.js": "/static/js/main.980f7057.chunk.js",
-    "main.js.map": "/static/js/main.980f7057.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.733aca9e.js",
-    "runtime-main.js.map": "/static/js/runtime-main.733aca9e.js.map",
-    "static/js/2.7697ac50.chunk.js": "/static/js/2.7697ac50.chunk.js",
-    "static/js/2.7697ac50.chunk.js.map": "/static/js/2.7697ac50.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.7697ac50.chunk.js.LICENSE.txt": "/static/js/2.7697ac50.chunk.js.LICENSE.txt"
+    "main.css": "/ithome-21ironman-todolist/static/css/main.2a944d25.chunk.css",
+    "main.js": "/ithome-21ironman-todolist/static/js/main.1b1c8210.chunk.js",
+    "main.js.map": "/ithome-21ironman-todolist/static/js/main.1b1c8210.chunk.js.map",
+    "runtime-main.js": "/ithome-21ironman-todolist/static/js/runtime-main.88e912e6.js",
+    "runtime-main.js.map": "/ithome-21ironman-todolist/static/js/runtime-main.88e912e6.js.map",
+    "static/js/2.35821c16.chunk.js": "/ithome-21ironman-todolist/static/js/2.35821c16.chunk.js",
+    "static/js/2.35821c16.chunk.js.map": "/ithome-21ironman-todolist/static/js/2.35821c16.chunk.js.map",
+    "index.html": "/ithome-21ironman-todolist/index.html",
+    "static/css/main.2a944d25.chunk.css.map": "/ithome-21ironman-todolist/static/css/main.2a944d25.chunk.css.map",
+    "static/js/2.35821c16.chunk.js.LICENSE.txt": "/ithome-21ironman-todolist/static/js/2.35821c16.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.733aca9e.js",
-    "static/js/2.7697ac50.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.980f7057.chunk.js"
+    "static/js/runtime-main.88e912e6.js",
+    "static/js/2.35821c16.chunk.js",
+    "static/css/main.2a944d25.chunk.css",
+    "static/js/main.1b1c8210.chunk.js"
   ]
 }
