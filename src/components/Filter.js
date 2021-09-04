@@ -7,7 +7,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.div`
-  background-color: #bebebe;
+  background-color: ${(props) => (props.active ? "#ffc236" : "#bebebe")};
   border: none;
   border-bottom: 2px solid #3c5d95;
   border-radius: 3px 3px 0 0;
@@ -17,24 +17,29 @@ const Button = styled.div`
   letter-spacing: 0.1em;
   text-align: center;
   cursor: pointer;
-
-  &:hover {
-    background-color: #ffc236;
-  }
 `;
 
-function Filter() {
+function Filter(props) {
   const dispatch = useDispatch();
 
   return (
     <ButtonContainer>
-      <Button onClick={() => dispatch(actions.setFilter("SHOW_ALL"))}>
+      <Button
+        active={props.selected === "SHOW_ALL"}
+        onClick={() => dispatch(actions.setFilter("SHOW_ALL"))}
+      >
         ALL
       </Button>
-      <Button onClick={() => dispatch(actions.setFilter("SHOW_TODO"))}>
+      <Button
+        active={props.selected === "SHOW_TODO"}
+        onClick={() => dispatch(actions.setFilter("SHOW_TODO"))}
+      >
         TODO
       </Button>
-      <Button onClick={() => dispatch(actions.setFilter("SHOW_DONE"))}>
+      <Button
+        active={props.selected === "SHOW_DONE"}
+        onClick={() => dispatch(actions.setFilter("SHOW_DONE"))}
+      >
         DONE
       </Button>
     </ButtonContainer>

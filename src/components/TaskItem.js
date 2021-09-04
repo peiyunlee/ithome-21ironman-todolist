@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import * as actions from "../actions/todos";
-import checkIcon from "../assets/icon/check.png";
 
 const Container = styled.div`
   background-color: white;
@@ -14,17 +13,10 @@ const Container = styled.div`
   padding: 0 20px;
 `;
 
-const CircleButton = styled.div`
-  background-color: white;
-  border: 3px solid #f5727e;
-  border-radius: 50%;
+const CheckBox = styled.input.attrs({ type: 'checkbox' })`
   width: 18px;
   height: 18px;
   cursor: pointer;
-  background-color: ${(props) => (props.check ? "#f5727e" : "white")};
-  display: ${(props) => (props.check ? "flex" : "auto")};
-  align-items: center;
-  justify-content: center;
 `;
 
 const TaskName = styled.div`
@@ -43,7 +35,7 @@ const Button = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: #ffc236;
+    background-color: #F5727E;
   }
 `;
 
@@ -52,18 +44,11 @@ function TaskItem(props) {
 
   return (
     <Container>
-      {props.task.isCompleted ? (
-        <CircleButton
-          check
-          onClick={() => dispatch(actions.toggleTask(props.task.idx))}
-        >
-          <img src={checkIcon} alt="" />
-        </CircleButton>
-      ) : (
-        <CircleButton
-          onClick={() => dispatch(actions.toggleTask(props.task.idx))}
-        ></CircleButton>
-      )}
+      <CheckBox
+        type="checkbox"
+        checked={props.task.isCompleted}
+        onClick={() => dispatch(actions.toggleTask(props.task.idx))}
+      />
       <TaskName>{props.task.taskName}</TaskName>
       <Button onClick={() => dispatch(actions.deleteTask(props.task.idx))}>
         Delete

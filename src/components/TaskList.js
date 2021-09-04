@@ -42,7 +42,7 @@ function TaskList() {
 
   return (
     <Wrapper>
-      <Filter />
+      <Filter selected = {filter}/>
       <TaskItemContainer>{renderItems()}</TaskItemContainer>
     </Wrapper>
   );
