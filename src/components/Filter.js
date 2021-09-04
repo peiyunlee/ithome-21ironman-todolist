@@ -12,7 +12,6 @@ const Button = styled.div`
   border-bottom: 2px solid #3c5d95;
   border-radius: 3px 3px 0 0;
   padding: 5px 10px;
-  width: 45px;
   color: white;
   margin-right: 10px;
   letter-spacing: 0.1em;
@@ -30,13 +29,13 @@ function Filter() {
   return (
     <ButtonContainer>
       <Button onClick={() => dispatch(actions.setFilter("SHOW_ALL"))}>
-        All
+        ALL
       </Button>
       <Button onClick={() => dispatch(actions.setFilter("SHOW_TODO"))}>
-        Todo
+        TODO
       </Button>
       <Button onClick={() => dispatch(actions.setFilter("SHOW_DONE"))}>
-        Done
+        DONE
       </Button>
     </ButtonContainer>
   );
