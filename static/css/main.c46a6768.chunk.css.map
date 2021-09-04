@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/app.css"],"names":[],"mappings":"AAAA,KACE,QAAS,CACT,qCACF","file":"main.c46a6768.chunk.css","sourcesContent":["body {\r\n  margin: 0;\r\n  font-family: \"Noto Sans TC\", sans-serif;\r\n}\r\n"]}
