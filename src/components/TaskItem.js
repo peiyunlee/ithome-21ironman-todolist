@@ -47,7 +47,7 @@ function TaskItem(props) {
       <CheckBox
         type="checkbox"
         checked={props.task.isCompleted}
-        onClick={() => dispatch(actions.toggleTask(props.task.idx))}
+        onChange={() => dispatch(actions.toggleTask(props.task.idx))}
       />
       <TaskName>{props.task.taskName}</TaskName>
       <Button onClick={() => dispatch(actions.deleteTask(props.task.idx))}>

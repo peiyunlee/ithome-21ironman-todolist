@@ -32,8 +32,16 @@ const Wrapper = styled.div`
   margin: 25px auto 40px;
 `;
 
-const AddBtnImg = styled.img`
-  cursor: pointer;
+const AddBtn = styled.button`
+  padding: 0;
+  border: none;
+  height: 27px;
+  width: 27px;
+  background-color: inherit;
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 function AddTask() {
@@ -52,14 +60,16 @@ function AddTask() {
 
   return (
     <Wrapper>
-        <Input
-          name="addtask"
-          type="text"
-          placeholder={"Add new task ..."}
-          value={newTask}
-          onChange={handleChange}
-        />
-        <AddBtnImg src={addIcon} alt="" onClick={() => handleClick()} />
+      <Input
+        name="addtask"
+        type="text"
+        placeholder={"Add new task ..."}
+        value={newTask}
+        onChange={handleChange}
+      />
+      <AddBtn>
+        <img src={addIcon} alt="" onClick={() => handleClick()} />
+      </AddBtn>
     </Wrapper>
   );
 }
