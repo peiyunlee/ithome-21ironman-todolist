@@ -54,6 +54,7 @@ function AddTask() {
   };
 
   const handleClick = (event) => {
+    if(newTask === "") return;
     dispatch(actions.addTask(newTask));
     setnewTask("");
   };
@@ -67,8 +68,8 @@ function AddTask() {
         value={newTask}
         onChange={handleChange}
       />
-      <AddBtn>
-        <img src={addIcon} alt="" onClick={() => handleClick()} />
+      <AddBtn onClick={() => handleClick()} >
+        <img src={addIcon} alt=""/>
       </AddBtn>
     </Wrapper>
   );
